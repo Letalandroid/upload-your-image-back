@@ -24,7 +24,9 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_SECRET,
 });
 
-app.use(cors());
+app.use(cors({
+  origin: "*",
+}));
 
 router.get("/images", (_req: any, res: any) => {
   imagesModel.find({}, (err: any, images: any) => {
