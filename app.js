@@ -8,7 +8,7 @@ var rutasGenerales = require("./routes/general.routes");
 dotenv.config();
 var cors = require("cors");
 app.use(cors({
-    origin: "https://upload-your-image.vercel.app/",
+    origin: "*",
     methods: ["GET", "POST"]
 }));
 app.use(express.json());
