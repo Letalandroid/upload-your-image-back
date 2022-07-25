@@ -13,14 +13,14 @@ app.use(morgan("dev"));
 app.use(override("_method"));
 app.use(rutasGenerales);
 
-const cors = require("cors");
+// const cors = require("cors");
 
-app.use(
-  cors({
-    origin: "https://upload-your-image.vercel.app/",
-    methods: ["GET", "POST"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://upload-your-image.vercel.app/",
+//     methods: ["GET", "POST"],
+//   })
+// );
 
 // DB Connection
 const mongoose = require('mongoose');
