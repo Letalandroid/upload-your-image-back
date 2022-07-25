@@ -23,6 +23,18 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_SECRET,
 });
 
+app.use(function (_req, res, next) {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://upload-your-image-backend.herokuapp.com/"
+  );
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 router.get("/images", (_req: any, res: any) => {
   imagesModel.find({}, (err: any, images: any) => {
     if (err) {
