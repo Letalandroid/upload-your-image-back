@@ -23,4 +23,13 @@ mongoose.connect(process.env.DB_CONNECTION, {
     useUnifiedTopology: true
 }).then(() => console.log('DB Connected')).catch((err: any) => console.log(err));
 
+app.use(function (_req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://upload-your-image-backend.herokuapp.com/");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 module.exports = app;
