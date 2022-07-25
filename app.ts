@@ -7,12 +7,6 @@ const path = require("path");
 const rutasGenerales = require("./routes/general.routes")
 dotenv.config();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(morgan("dev"));
-app.use(override("_method"));
-app.use(rutasGenerales);
-
 const cors = require("cors");
 
 app.use(
@@ -21,6 +15,12 @@ app.use(
     methods: ["GET", "POST"],
   })
 );
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(morgan("dev"));
+app.use(override("_method"));
+app.use(rutasGenerales);
 
 // DB Connection
 const mongoose = require('mongoose');
