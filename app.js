@@ -6,16 +6,16 @@ var override = require("method-override");
 var path = require("path");
 var rutasGenerales = require("./routes/general.routes");
 dotenv.config();
+var cors = require("cors");
+app.use(cors({
+    origin: "https://upload-your-image.vercel.app/",
+    methods: ["GET", "POST"]
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(override("_method"));
 app.use(rutasGenerales);
-var cors = require("cors");
-app.use(cors({
-    origin: "*",
-    methods: ["GET", "POST"]
-}));
 // DB Connection
 var mongoose = require('mongoose');
 mongoose.connect(process.env.DB_CONNECTION, {
