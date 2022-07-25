@@ -26,7 +26,7 @@ cloudinary.config({
 app.use(function (_req, res, next) {
   res.header(
     "Access-Control-Allow-Origin",
-    "https://upload-your-image-backend.herokuapp.com/"
+    "https://upload-your-image.vercel.app/"
   );
   res.header(
     "Access-Control-Allow-Headers",
