@@ -3,7 +3,6 @@ const cloudinary = require("cloudinary");
 const router = Router();
 const pat = require("path");
 const dv = require("dotenv");
-const cors = require("cors");
 const imagesModel = require("../models/images");
 dv.config();
 
@@ -23,10 +22,6 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_KEY,
   api_secret: process.env.CLOUDINARY_SECRET,
 });
-
-app.use(cors({
-  origin: "*",
-}));
 
 router.get("/images", (_req: any, res: any) => {
   imagesModel.find({}, (err: any, images: any) => {

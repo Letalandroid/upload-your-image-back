@@ -5,14 +5,16 @@ var morgan = require("morgan");
 var override = require("method-override");
 var path = require("path");
 var rutasGenerales = require("./routes/general.routes");
-var cors = require("cors");
 dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(override("_method"));
 app.use(rutasGenerales);
-app.use(cors());
+var cors = require("cors");
+app.use(cors({
+    origin: "*"
+}));
 // DB Connection
 var mongoose = require('mongoose');
 mongoose.connect(process.env.DB_CONNECTION, {

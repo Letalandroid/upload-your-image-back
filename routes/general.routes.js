@@ -90,7 +90,7 @@ router.post("/upload", upload.single("image"), function (req, res) { return __aw
                                     return [4 /*yield*/, newPost.save()];
                                 case 1:
                                     _a.sent();
-                                    res.redirect("http://localhost:3000"); // Change link
+                                    res.redirect("https://upload-your-image.vercel.app/");
                                     return [3 /*break*/, 3];
                                 case 2: return [2 /*return*/, res.status(500).json({
                                         ok: false,
