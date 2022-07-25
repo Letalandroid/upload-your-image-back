@@ -5,7 +5,6 @@ const morgan = require("morgan");
 const override = require("method-override");
 const path = require("path");
 const rutasGenerales = require("./routes/general.routes")
-const cors = require("cors");
 dotenv.config();
 
 app.use(express.json());
@@ -13,7 +12,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(override("_method"));
 app.use(rutasGenerales);
-app.use(cors());
 
 // DB Connection
 const mongoose = require('mongoose');
