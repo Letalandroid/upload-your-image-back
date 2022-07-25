@@ -17,7 +17,8 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://upload-your-image.vercel.app/",
+    methods: ["GET", "POST"],
   })
 );
 
