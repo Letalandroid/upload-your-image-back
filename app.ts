@@ -3,7 +3,6 @@ const app = express();
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const override = require("method-override");
-const path = require("path");
 const rutasGenerales = require("./routes/general.routes")
 dotenv.config();
 
